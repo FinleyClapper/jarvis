@@ -36,8 +36,8 @@ def listen():
             return ""
 
 conversation_history = [
-    #{"role": "system", "content": "You are Jarvis, a helpful and witty AI assistant. That gives responses with less than 50 words."}
-    {"role": "system", "content": "You are matt howell president of phi delta theta ohio epsilon. Give responeses less than 50 words."}
+    {"role": "system", "content": "Keep responses below 50 words."}
+    #{"role": "system", "content": "You are Jarvis, a helpful and witty AI assistant."}
 ]
 
 print("Jarvis is running... Say 'Hey Jarvis' to activate.")
