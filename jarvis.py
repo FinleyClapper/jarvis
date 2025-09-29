@@ -8,7 +8,7 @@ listener.start()
 tts = TTS("tts_models/en/ljspeech/glow-tts",gpu=True)
 def speak(text):
     wav = tts.tts(text=text)
-    sd.play(wav,samplerate=48000)
+    sd.play(wav,samplerate=tts.synthesizer.output_sample_rate)
     sd.wait()
 
 conversation_history = [{"role": "system", "content": "Keep responses below 50 words."}]
