@@ -3,9 +3,10 @@ import ollama
 from TTS.api import TTS
 import sounddevice as sd
 from HeyJarvisv2 import JarvisListener
-listener = JarvisListener(wake_word="jarvis", whisper_model="small")
-listener.start()
+
 tts = TTS("tts_models/en/ljspeech/glow-tts",gpu=True)
+listener = JarvisListener(wake_word="jarvis", whisper_model="small",samplerate=tts.synthesizer.output_sample_rate)
+listener.start()
 def speak(text):
     wav = tts.tts(text=text)
     sd.play(wav,samplerate=tts.synthesizer.output_sample_rate)
